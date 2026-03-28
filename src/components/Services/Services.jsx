@@ -62,7 +62,7 @@ export default function Services() {
               >
                 {icon}
               </span>
-              <h3 className="text-[1.1rem] font-bold tracking-[0.02em] mb-2.5 text-accent">
+              <h3 className="text-[1.1rem] font-bold tracking-[0.02em] mb-2.5 text-white">
                 {title}
               </h3>
               <p className="text-sm text-muted leading-[1.65]">{description}</p>

@@ -7,7 +7,7 @@ const BRANDS = [
   "Aston Martin",
   "McLaren",
 ];
-
+import { Button } from "../ui/moving-border";
 const STATS = [
   { value: "20+", label: "Years of expertise" },
   { value: "500+", label: "Vehicles serviced" },
@@ -96,9 +96,14 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <a href="#appointment" className="btn btn-primary self-start mt-2">
-              Book a Service
-            </a>
+            <Button
+              borderRadius="1.75rem"
+              containerClassName="w-52 h-14"
+              borderClassName="bg-[radial-gradient(var(--color-accent)_20%,transparent_70%)]"
+              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-widest uppercase transition-all duration-500 hover:bg-surface hover:text-accent hover:tracking-[0.18em]"
+            >
+              <a href="#appointment">Book a Service</a>
+            </Button>
           </div>
         </div>
 
