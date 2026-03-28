@@ -38,9 +38,9 @@ export default function Footer() {
         <div className="sm:col-span-2 lg:col-span-1">
           <a
             href="#hero"
-            className="font-heading text-[1.5rem] font-bold tracking-[0.04em] text-foreground"
+            className="font-russo text-[1.5rem] tracking-[0.04em] text-foreground"
           >
-            DK<span className=""> Performance</span>
+            DK Performance
           </a>
           <p className="mt-2 text-sm text-muted">
             Built different. Built right.

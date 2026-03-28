@@ -194,6 +194,7 @@
    always win for every Tailwind utility (bg-accent, text-muted, etc.).
    ───────────────────────────────────────────────────────────────────────── */
 @theme {
+  --font-russo:         'Russo One', sans-serif;
   --color-accent:       #e63f00;   /* brand orange  →  bg-accent / text-accent  */
   --color-accent-hover: #ff4d00;   /* hover orange  →  bg-accent-hover           */
   --color-foreground:   #f0f0f0;   /* light text    →  text-foreground (dark bg) */

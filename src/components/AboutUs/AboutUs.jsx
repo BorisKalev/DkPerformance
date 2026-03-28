@@ -23,7 +23,7 @@ export default function AboutUs() {
           {/* Label + Title */}
           <div className="lg:flex-1">
             <span className="section-label">About Us</span>
-            <h2 className="font-heading text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.05] tracking-[0.02em] text-primary mt-1">
+            <h2 className="font-russo text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-[0.02em] text-primary mt-1">
               The DK
               <br className="hidden sm:block" /> Difference
             </h2>

@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-heading text-[1.6rem] font-bold tracking-[0.04em] text-white"
+          className="font-russo text-[1.6rem] tracking-[0.04em] text-white"
         >
           DK<span className="text-white"> Performance</span>
         </a>
