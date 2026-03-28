@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 
+// TODO: replace "#" with the real Instagram URL
+const INSTAGRAM_URL = "#";
+
 const NAV_LINKS = [
   { label: "About",    href: "#about"       },
   { label: "Services", href: "#services"    },
@@ -7,9 +10,31 @@ const NAV_LINKS = [
   { label: "Book Now", href: "#appointment" },
 ];
 
+function InstagramIcon({ className = "" }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled,  setScrolled]  = useState(false);
+  const [menuOpen,  setMenuOpen]  = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -26,15 +51,13 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-300 mx-auto flex items-center justify-between">
+
         {/* Logo */}
-        <a
-          href="#hero"
-          className="font-heading text-[1.6rem] font-bold tracking-[0.04em] text-black"
-        >
+        <a href="#hero" className="font-heading text-[1.6rem] font-bold tracking-[0.04em] text-black">
           DK<span className="text-accent">Performance</span>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav + Instagram */}
         <nav className="hidden sm:flex items-center gap-10">
           {NAV_LINKS.map(({ label, href }) => (
             <a
@@ -51,24 +74,30 @@ export default function Navbar() {
               {label}
             </a>
           ))}
+
+          {/* Instagram — separated by a subtle divider */}
+          <span className="w-px h-4 bg-muted/30" aria-hidden="true" />
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="DK Performance on Instagram"
+            className="text-muted hover:text-accent transition-colors duration-200"
+          >
+            <InstagramIcon />
+          </a>
         </nav>
 
-        {/* Hamburger */}
+        {/* Hamburger (mobile) */}
         <button
           className="sm:hidden flex flex-col gap-1.25 p-1"
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
         >
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "translate-y-1.75 rotate-45" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`}
-          />
+          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "translate-y-1.75 rotate-45"  : ""}`} />
+          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0"                    : ""}`} />
+          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`} />
         </button>
       </div>
 
@@ -85,6 +114,19 @@ export default function Navbar() {
               {label}
             </a>
           ))}
+
+          {/* Instagram row at bottom of mobile menu */}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="DK Performance on Instagram"
+            className="px-6 py-4 flex items-center gap-2.5 text-sm font-semibold tracking-[0.12em] uppercase text-muted hover:text-accent transition-colors"
+            onClick={() => setMenuOpen(false)}
+          >
+            <InstagramIcon />
+            Instagram
+          </a>
         </nav>
       )}
     </header>
