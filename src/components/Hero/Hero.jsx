@@ -9,7 +9,7 @@ import dkLogoVideo from "../../videos/DkPerformanceAnimLogo.mp4";
 //   VIDEO_END     timestamp (s) reached when scroll hits SCROLL_RANGE
 const SCROLL_RANGE = 800;
 const VIDEO_START = 0;
-const VIDEO_END = 4;
+const VIDEO_END = 3;
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function Hero() {

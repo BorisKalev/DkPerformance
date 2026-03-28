@@ -5,6 +5,7 @@ import Services from './components/Services/Services'
 import Gallery from './components/Gallery/Gallery'
 import Appointment from './components/Appointment/Appointment'
 import Footer from './components/Footer/Footer'
+import CookieBanner from './components/ui/cookie-banner'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Appointment />
       </main>
       <Footer />
+      <CookieBanner />
     </>
   )
 }
