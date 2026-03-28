@@ -28,8 +28,8 @@ const SETS = 4;
 
 export default function SponsorsTicker() {
   return (
-    <div className="py-8 md:py-12 bg-page">
-      <div className="mx-auto w-2/5 px-5 lg:px-20">
+    <div className="py-8 md:py-10 bg-page">
+      <div className="mx-auto w-3/4 xl:w-2/5 px-5 lg:px-15">
         {" "}
         {/* container fixed */}
         <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black,transparent)]">
@@ -49,7 +49,7 @@ export default function SponsorsTicker() {
                   key={`${setIdx}-${alt}`}
                   src={src}
                   alt={alt}
-                  className="h-10 md:h-14 w-auto object-contain flex-none"
+                  className="h-10 md:h-20 w-auto object-contain flex-none"
                 />
               )),
             )}
