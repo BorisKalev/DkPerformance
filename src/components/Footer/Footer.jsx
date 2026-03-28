@@ -32,7 +32,7 @@ function InstagramIcon({ className = "" }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-border">
+    <footer className="bg-surface border-t border-border ">
       <div className="max-w-300 mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] gap-8 lg:gap-12 py-14">
         {/* Brand + social */}
         <div className="sm:col-span-2 lg:col-span-1">

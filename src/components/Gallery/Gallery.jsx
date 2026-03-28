@@ -1,25 +1,48 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 const ITEMS = [
-  { id: 1, src: 'https://placehold.co/800x600/111/e63f00?text=Build+01', alt: 'Engine build 01' },
-  { id: 2, src: 'https://placehold.co/800x600/111/e63f00?text=Build+02', alt: 'Turbo install'   },
-  { id: 3, src: 'https://placehold.co/800x600/111/e63f00?text=Build+03', alt: 'Dyno run'        },
-  { id: 4, src: 'https://placehold.co/800x600/111/e63f00?text=Build+04', alt: 'Suspension setup' },
-  { id: 5, src: 'https://placehold.co/800x600/111/e63f00?text=Build+05', alt: 'Custom exhaust'  },
-  { id: 6, src: 'https://placehold.co/800x600/111/e63f00?text=Build+06', alt: 'Roll cage fab'   },
-]
+  {
+    id: 1,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+01",
+    alt: "Engine build 01",
+  },
+  {
+    id: 2,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+02",
+    alt: "Turbo install",
+  },
+  {
+    id: 3,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+03",
+    alt: "Dyno run",
+  },
+  {
+    id: 4,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+04",
+    alt: "Suspension setup",
+  },
+  {
+    id: 5,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+05",
+    alt: "Custom exhaust",
+  },
+  {
+    id: 6,
+    src: "https://placehold.co/800x600/111/e63f00?text=Build+06",
+    alt: "Roll cage fab",
+  },
+];
 
 export default function Gallery() {
-  const [lightbox, setLightbox] = useState(null)
+  const [lightbox, setLightbox] = useState(null);
 
-  const close = () => setLightbox(null)
-  const prev  = () => setLightbox(i => (i - 1 + ITEMS.length) % ITEMS.length)
-  const next  = () => setLightbox(i => (i + 1) % ITEMS.length)
+  const close = () => setLightbox(null);
+  const prev = () => setLightbox((i) => (i - 1 + ITEMS.length) % ITEMS.length);
+  const next = () => setLightbox((i) => (i + 1) % ITEMS.length);
 
   return (
     <section id="gallery" className="py-20 px-6 bg-bg">
       <div className="max-w-300 mx-auto">
-
         <header className="mb-10">
           <span className="section-label">The Work</span>
           <h2 className="section-title">Build Gallery</h2>
@@ -41,11 +64,19 @@ export default function Gallery() {
               />
               {/* Hover overlay */}
               <span className="absolute inset-0 flex items-center justify-center bg-accent/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  <line x1="11" y1="8"  x2="11"    y2="14"    />
-                  <line x1="8"  y1="11" x2="14"    y2="11"    />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
                 </svg>
               </span>
             </button>
@@ -64,7 +95,7 @@ export default function Gallery() {
         >
           <div
             className="relative max-w-[min(90vw,900px)] w-full flex flex-col items-center gap-4"
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close */}
             <button
@@ -99,10 +130,12 @@ export default function Gallery() {
               ›
             </button>
 
-            <p className="text-muted text-sm tracking-[0.04em]">{ITEMS[lightbox].alt}</p>
+            <p className="text-muted text-sm tracking-[0.04em]">
+              {ITEMS[lightbox].alt}
+            </p>
           </div>
         </div>
       )}
     </section>
-  )
+  );
 }
