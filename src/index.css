@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-bg:       #0a0a0a;
+  --color-surface:  #111111;
+  --color-surface2: #1a1a1a;
+  --color-border:   #2a2a2a;
+  --color-accent:   #e63f00;
+  --color-accent-hover: #ff4d00;
+  --color-foreground: #f0f0f0;
+  --color-muted:    #888888;
+
+  /* Global page tokens — bg-page / text-primary */
+  --color-page:    #fdfdfd;
+  --color-primary: #261e1b;
+
+  /* Typography */
+  --font-heading: 'Bebas Neue', Impact, sans-serif;
+  --font-body:    Inter, system-ui, sans-serif;
+
+  /* Custom animations */
+  --animate-scroll-bounce: scrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0);    opacity: 1; }
+  80%       { transform: translateY(12px); opacity: 0; }
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html   { scroll-behavior: smooth; }
+  body   { background-color: var(--color-page); color: var(--color-primary); font-family: var(--font-body); line-height: 1.6; }
+  img    { display: block; max-width: 100%; }
+  a      { color: inherit; text-decoration: none; }
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+}
+
+@layer components {
+  /* Reusable buttons */
+  .btn {
+    @apply inline-block px-8 py-3 text-sm font-semibold tracking-[0.08em] uppercase rounded-sm transition-all duration-200 active:scale-[0.97];
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-hover;
+  }
+  .btn-outline {
+    @apply border-2 border-accent text-accent hover:bg-accent hover:text-white;
+  }
+
+  /* Reusable typography */
+  .section-label {
+    @apply inline-block text-xs font-bold tracking-[0.2em] uppercase text-accent mb-3;
+  }
+  .section-title {
+    @apply font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold tracking-[0.02em] leading-[1.1] text-foreground;
+  }
+
+  /* Reusable form elements */
+  .field-input {
+    @apply w-full bg-surface2 border border-border rounded-[3px] px-3.5 py-2.5 text-foreground font-body text-[0.95rem] outline-none transition-colors duration-200 focus:border-accent;
+  }
+  .field-label {
+    @apply text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-muted;
+  }
+}
