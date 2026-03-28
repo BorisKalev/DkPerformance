@@ -99,8 +99,8 @@ export default function AboutUs() {
             <Button
               borderRadius="1.75rem"
               containerClassName="w-52 h-14"
-              borderClassName="bg-[radial-gradient(var(--color-accent)_20%,transparent_70%)]"
-              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-widest uppercase transition-all duration-500 hover:bg-surface hover:text-accent hover:tracking-[0.18em]"
+              borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
+              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-widest uppercase hover:text-accent"
             >
               <a href="#appointment">Book a Service</a>
             </Button>

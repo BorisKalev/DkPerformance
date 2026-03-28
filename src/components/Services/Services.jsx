@@ -1,39 +1,33 @@
 const SERVICES = [
   {
-    icon: "⚙️",
-    title: "Engine Builds",
-    description:
-      "Short blocks, long blocks, full custom builds — designed for maximum power with proven reliability.",
-  },
-  {
-    icon: "💨",
-    title: "Forced Induction",
-    description:
-      "Turbo and supercharger installs, intercooler setups, and full supporting mods from injectors to fueling.",
-  },
-  {
-    icon: "📊",
-    title: "ECU Tuning",
-    description:
-      "Dyno-proven road and race maps. We tune for real-world driveability as much as peak numbers.",
-  },
-  {
     icon: "🔧",
-    title: "Suspension & Handling",
+    title: "General Maintenance",
     description:
-      "Coilovers, alignment, corner weighting, and geometry changes for the track or the street.",
+      "Regular maintenance is crucial for keeping your car in good working condition and preventing breakdowns. This includes oil and filter changes, brake and tire checks, and full engine and electrical inspections.",
   },
   {
-    icon: "🛞",
-    title: "Brakes & Driveline",
+    icon: "⚡",
+    title: "Performance",
     description:
-      "Big brake kits, differential swaps, clutch upgrades — every link in the power chain sorted.",
+      "Performance upgrades enhance the power, handling, and overall driving experience of your vehicle. From high-flow exhaust systems and suspension upgrades to performance chips and tuners — we build cars that perform.",
   },
   {
-    icon: "🔩",
-    title: "Custom Fabrication",
+    icon: "🔍",
+    title: "Inspections",
     description:
-      "Roll cages, exhaust systems, oil catch cans, and one-off brackets built in-house to your spec.",
+      "Our inspection process examines your vehicle thoroughly to ensure it is safe and roadworthy. We cover brakes, suspension, steering, tires, emissions, and all critical safety systems.",
+  },
+  {
+    icon: "⚙️",
+    title: "Repair",
+    description:
+      "Our technicians use specialized tools and equipment to diagnose and repair all types of vehicle issues — including engine, transmission, brakes, suspension, and electrical systems.",
+  },
+  {
+    icon: "✨",
+    title: "Detailing",
+    description:
+      "A thorough cleaning and restoration of every interior and exterior surface, leaving your vehicle looking like new. Exterior wash and wax, carpet and seat cleaning, dashboard polishing, and full trim restoration.",
   },
 ];
 
@@ -45,8 +39,8 @@ export default function Services() {
           <span className="section-label">What We Do</span>
           <h2 className="section-title">Our Services</h2>
           <p className="mt-3.5 max-w-[52ch] text-muted text-base leading-[1.7]">
-            From a simple tune to a full race build — we handle every part of
-            the build process under one roof.
+            From routine maintenance to full performance builds — everything
+            your vehicle needs, handled under one roof.
           </p>
         </header>
 
