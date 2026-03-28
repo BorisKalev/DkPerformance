@@ -15,15 +15,30 @@ const SERVICES = [
 ];
 
 const TIME_SLOTS = [
-  "9:00 AM", "10:00 AM", "11:00 AM",
-  "1:00 PM", "2:00 PM",  "3:00 PM", "4:00 PM",
+  "9:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "1:00 PM",
+  "2:00 PM",
+  "3:00 PM",
+  "4:00 PM",
 ];
 
 const MONTHS = [
-  "January","February","March","April","May","June",
-  "July","August","September","October","November","December",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
-const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const INITIAL = { name: "", phone: "", vehicle: "", service: "" };
 
@@ -38,11 +53,11 @@ function Calendar({ selected, onSelect }) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const year  = viewDate.getFullYear();
+  const year = viewDate.getFullYear();
   const month = viewDate.getMonth();
 
   const firstDayOfWeek = new Date(year, month, 1).getDay();
-  const daysInMonth    = new Date(year, month + 1, 0).getDate();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   // Build flat array: nulls for leading blanks, then 1…daysInMonth
   const cells = [
@@ -50,11 +65,12 @@ function Calendar({ selected, onSelect }) {
     ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
   ];
 
-  const toDate    = (d) => new Date(year, month, d);
-  const isPast    = (d) => d !== null && toDate(d) < today;
-  const isToday   = (d) => d !== null && toDate(d).getTime() === today.getTime();
-  const isSel     = (d) =>
-    d !== null && selected &&
+  const toDate = (d) => new Date(year, month, d);
+  const isPast = (d) => d !== null && toDate(d) < today;
+  const isToday = (d) => d !== null && toDate(d).getTime() === today.getTime();
+  const isSel = (d) =>
+    d !== null &&
+    selected &&
     selected.getDate() === d &&
     selected.getMonth() === month &&
     selected.getFullYear() === year;
@@ -103,8 +119,8 @@ function Calendar({ selected, onSelect }) {
       <div className="grid grid-cols-7 gap-0.5">
         {cells.map((d, i) => {
           const past = isPast(d);
-          const sel  = isSel(d);
-          const tod  = isToday(d);
+          const sel = isSel(d);
+          const tod = isToday(d);
 
           return (
             <button
@@ -114,12 +130,18 @@ function Calendar({ selected, onSelect }) {
               onClick={() => d && !past && onSelect(toDate(d))}
               className={[
                 "h-8 w-full rounded-sm text-sm transition-all duration-150 font-medium",
-                !d                            ? "invisible"                                      : "",
-                past                          ? "text-muted/25 cursor-not-allowed"               : "",
-                sel                           ? "bg-accent text-white shadow-[0_0_10px_var(--color-accent)/40]" : "",
-                tod && !sel                   ? "border border-accent text-accent"               : "",
-                !past && !sel && d            ? "hover:bg-accent/15 hover:text-foreground text-foreground/70 cursor-pointer" : "",
-              ].filter(Boolean).join(" ")}
+                !d ? "invisible" : "",
+                past ? "text-muted/25 cursor-not-allowed" : "",
+                sel
+                  ? "bg-accent text-white shadow-[0_0_10px_var(--color-accent)/40]"
+                  : "",
+                tod && !sel ? "border border-accent text-accent" : "",
+                !past && !sel && d
+                  ? "hover:bg-accent/15 hover:text-foreground text-foreground/70 cursor-pointer"
+                  : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
             >
               {d}
             </button>
@@ -155,7 +177,7 @@ function TimeSlots({ selected, onSelect }) {
 
 // ── Main component ────────────────────────────────────────────────────────
 export default function Appointment() {
-  const [form,         setForm]         = useState(INITIAL);
+  const [form, setForm] = useState(INITIAL);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
@@ -171,12 +193,17 @@ export default function Appointment() {
   };
 
   const formatDate = (d) =>
-    d ? d.toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric" }) : null;
+    d
+      ? d.toLocaleDateString("en-CA", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+        })
+      : null;
 
   return (
     <section id="appointment" className="py-20 px-6 bg-surface">
       <div className="max-w-300 mx-auto">
-
         {/* Header */}
         <header className="mb-12">
           <span className="section-label">Get Started</span>
@@ -187,62 +214,95 @@ export default function Appointment() {
           </p>
         </header>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16"
+        >
           {/* ── Left: form fields ── */}
           <div className="flex flex-col gap-5">
-
             {/* Name */}
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="name" className="field-label">Full Name *</label>
+              <label htmlFor="name" className="field-label">
+                Full Name *
+              </label>
               <input
-                id="name" name="name" type="text"
+                id="name"
+                name="name"
+                type="text"
                 placeholder="John Smith"
                 className="field-input"
-                value={form.name} onChange={handleChange} required
+                value={form.name}
+                onChange={handleChange}
+                required
               />
             </div>
 
             {/* Phone */}
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="phone" className="field-label">Phone Number *</label>
+              <label htmlFor="phone" className="field-label">
+                Phone Number *
+              </label>
               <input
-                id="phone" name="phone" type="tel"
-                placeholder="+1 (514) 000-0000"
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="(514) 000-0000"
                 className="field-input"
-                value={form.phone} onChange={handleChange} required
+                value={form.phone}
+                onChange={handleChange}
+                required
               />
             </div>
 
             {/* Car model */}
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="vehicle" className="field-label">Car Model *</label>
+              <label htmlFor="vehicle" className="field-label">
+                Car Model *
+              </label>
               <input
-                id="vehicle" name="vehicle" type="text"
+                id="vehicle"
+                name="vehicle"
+                type="text"
                 placeholder="2021 BMW M3 Competition"
                 className="field-input"
-                value={form.vehicle} onChange={handleChange} required
+                value={form.vehicle}
+                onChange={handleChange}
+                required
               />
             </div>
 
             {/* Service */}
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="service" className="field-label">Service Type *</label>
+              <label htmlFor="service" className="field-label">
+                Service Type *
+              </label>
               <div className="relative">
                 <select
-                  id="service" name="service" required
+                  id="service"
+                  name="service"
+                  required
                   className="field-input appearance-none pr-10"
-                  value={form.service} onChange={handleChange}
+                  value={form.service}
+                  onChange={handleChange}
                 >
-                  <option value="" disabled>Select a service…</option>
+                  <option value="" disabled>
+                    Select a service…
+                  </option>
                   {SERVICES.map((s) => (
-                    <option key={s} value={s}>{s}</option>
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
                   ))}
                 </select>
                 <svg
                   className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted"
-                  width="12" height="8" viewBox="0 0 12 8"
-                  fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
+                  width="12"
+                  height="8"
+                  viewBox="0 0 12 8"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
                   aria-hidden="true"
                 >
                   <path d="M1 1l5 5 5-5" />
@@ -254,7 +314,9 @@ export default function Appointment() {
             {(selectedDate || selectedTime) && (
               <div className="mt-2 pl-4 border-l-2 border-accent flex flex-col gap-1">
                 {selectedDate && (
-                  <p className="text-sm text-foreground font-medium">{formatDate(selectedDate)}</p>
+                  <p className="text-sm text-foreground font-medium">
+                    {formatDate(selectedDate)}
+                  </p>
                 )}
                 {selectedTime && (
                   <p className="text-sm text-muted">{selectedTime}</p>
@@ -278,17 +340,13 @@ export default function Appointment() {
 
           {/* ── Submit — full width ── */}
           <div className="lg:col-span-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
+            <button type="submit" className="btn btn-primary">
               Book Appointment →
             </button>
             <p className="text-xs text-muted">
               You'll be redirected to our booking form to confirm your request.
             </p>
           </div>
-
         </form>
       </div>
     </section>
