@@ -2,11 +2,11 @@
 const INSTAGRAM_URL = "#";
 
 const LINKS = [
-  { label: 'About',    href: '#about'       },
-  { label: 'Services', href: '#services'    },
-  { label: 'Gallery',  href: '#gallery'     },
-  { label: 'Book Now', href: '#appointment' },
-]
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Book Now", href: "#appointment" },
+];
 
 function InstagramIcon({ className = "" }) {
   return (
@@ -27,21 +27,24 @@ function InstagramIcon({ className = "" }) {
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
     </svg>
-  )
+  );
 }
 
 export default function Footer() {
   return (
     <footer className="bg-surface border-t border-border">
-
       <div className="max-w-300 mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] gap-8 lg:gap-12 py-14">
-
         {/* Brand + social */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <a href="#hero" className="font-heading text-[1.5rem] font-bold tracking-[0.04em] text-foreground">
-            DK<span className="text-accent">Performance</span>
+          <a
+            href="#hero"
+            className="font-heading text-[1.5rem] font-bold tracking-[0.04em] text-foreground"
+          >
+            DK<span className=""> Performance</span>
           </a>
-          <p className="mt-2 text-sm text-muted">Built different. Built right.</p>
+          <p className="mt-2 text-sm text-muted">
+            Built different. Built right.
+          </p>
 
           {/* Social links */}
           <div className="mt-5 flex items-center gap-4">
@@ -73,22 +76,33 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="flex flex-col gap-2">
-          <a href="tel:+15550000000"               className="text-sm text-muted hover:text-accent transition-colors duration-200">+1 (555) 000-0000</a>
-          <a href="mailto:info@dkperformance.com"  className="text-sm text-muted hover:text-accent transition-colors duration-200">info@dkperformance.com</a>
-          <p className="mt-1 text-sm text-muted">123 Garage Lane, Anytown, USA</p>
+          <a
+            href="tel:+15550000000"
+            className="text-sm text-muted hover:text-accent transition-colors duration-200"
+          >
+            514-952-8503
+          </a>
+          <a
+            href="mailto:info@dkperformance.com"
+            className="text-sm text-muted hover:text-accent transition-colors duration-200"
+          >
+            info@dkperformance.ca
+          </a>
+          <p className="mt-1 text-sm text-muted">
+            3954 Boulevard Leman, Laval, Quebec H7E 1A1, Canada
+          </p>
         </div>
-
       </div>
 
       {/* Bottom bar */}
       <div className="border-t border-border">
         <div className="max-w-300 mx-auto px-6 py-5">
           <p className="text-xs text-muted tracking-[0.03em]">
-            &copy; {new Date().getFullYear()} DK Performance. All rights reserved.
+            &copy; {new Date().getFullYear()} DK Performance. All rights
+            reserved.
           </p>
         </div>
       </div>
-
     </footer>
-  )
+  );
 }

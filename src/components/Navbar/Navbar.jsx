@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 const INSTAGRAM_URL = "#";
 
 const NAV_LINKS = [
-  { label: "About",    href: "#about"       },
-  { label: "Services", href: "#services"    },
-  { label: "Gallery",  href: "#gallery"     },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Book Now", href: "#appointment" },
 ];
 
@@ -33,8 +33,8 @@ function InstagramIcon({ className = "" }) {
 }
 
 export default function Navbar() {
-  const [scrolled,  setScrolled]  = useState(false);
-  const [menuOpen,  setMenuOpen]  = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -51,10 +51,12 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-300 mx-auto flex items-center justify-between">
-
         {/* Logo */}
-        <a href="#hero" className="font-heading text-[1.6rem] font-bold tracking-[0.04em] text-black">
-          DK<span className="text-accent">Performance</span>
+        <a
+          href="#hero"
+          className="font-heading text-[1.6rem] font-bold tracking-[0.04em] text-white"
+        >
+          DK<span className="text-white"> Performance</span>
         </a>
 
         {/* Desktop nav + Instagram */}
@@ -95,9 +97,15 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
         >
-          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "translate-y-1.75 rotate-45"  : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0"                    : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`} />
+          <span
+            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "translate-y-1.75 rotate-45" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`}
+          />
         </button>
       </div>
 
