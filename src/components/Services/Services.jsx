@@ -1,3 +1,5 @@
+import { HoverEffect } from "../ui/card-hover-effect";
+
 const SERVICES = [
   {
     icon: "🔧",
@@ -50,25 +52,7 @@ export default function Services() {
           </p>
         </header>
 
-        <ul className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map(({ icon, title, description }) => (
-            <li
-              key={title}
-              className="bg-surface2 border border-border rounded-sm p-8 transition-all duration-300 hover:border-accent hover:-translate-y-1"
-            >
-              <span
-                className="block text-[2rem] mb-4 text-accent"
-                aria-hidden="true"
-              >
-                {icon}
-              </span>
-              <h3 className="text-[1.1rem] font-bold tracking-[0.02em] mb-2.5 text-white">
-                {title}
-              </h3>
-              <p className="text-sm text-muted leading-[1.65]">{description}</p>
-            </li>
-          ))}
-        </ul>
+        <HoverEffect items={SERVICES} />
       </div>
     </section>
   );

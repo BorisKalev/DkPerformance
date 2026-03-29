@@ -113,7 +113,15 @@ export default function LocationSection() {
               borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
               className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-[#e63f00] transition-colors duration-200"
             >
-              Get Directions
+              <span className="flex items-center gap-2.5">
+                {/* Google Maps pin icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 shrink-0" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 1.61.47 3.11 1.27 4.37L12 2z" fill="#C5221F"/>
+                  <circle cx="12" cy="9" r="2.5" fill="white"/>
+                </svg>
+                Get Directions
+              </span>
             </Button>
           </div>
         </div>
