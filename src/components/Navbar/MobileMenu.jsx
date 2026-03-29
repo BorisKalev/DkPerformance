@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { label: "Appointment", href: "#appointment" },
   { label: "Gallery", href: "#gallery" },
   { label: "Contact", href: "#contact" },
+  { label: "Location", href: "#location" },
 ];
 
 const itemVariants = {
