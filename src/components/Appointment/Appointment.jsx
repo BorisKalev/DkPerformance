@@ -5,13 +5,13 @@ const GOOGLE_FORM_URL = "https://forms.gle/REPLACE_ME";
 // ─────────────────────────────────────────────────────────────────────────
 
 const SERVICES = [
-  "Tire Change",
-  "Oil Change",
-  "Brake Service",
-  "Pre-Purchase Inspection",
-  "Oil Change and Tire Change",
-  "Detailing",
-  "Diagnostic",
+  { label: "Tire Change",                duration: "1 hr", price: "Prices Vary" },
+  { label: "Oil Change",                 duration: "1 hr", price: "Prices Vary" },
+  { label: "Brake Service",              duration: "1 hr", price: "Prices Vary" },
+  { label: "Pre-Purchase Inspection",    duration: "1 hr", price: "C$89.99" },
+  { label: "Oil Change and Tire Change", duration: "1 hr", price: "Prices Vary" },
+  { label: "Detailing",                  duration: "2 hr", price: "Prices Vary" },
+  { label: "Diagnostic",                 duration: "1 hr", price: "C$110" },
 ];
 
 const TIME_SLOTS = [
@@ -288,9 +288,9 @@ export default function Appointment() {
                   <option value="" disabled>
                     Select a service…
                   </option>
-                  {SERVICES.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
+                  {SERVICES.map(({ label }) => (
+                    <option key={label} value={label}>
+                      {label}
                     </option>
                   ))}
                 </select>
@@ -320,6 +320,19 @@ export default function Appointment() {
                 )}
                 {selectedTime && (
                   <p className="text-sm text-muted">{selectedTime}</p>
+                )}
+                {selectedTime && form.service && (() => {
+                  const svc = SERVICES.find((s) => s.label === form.service);
+                  return svc ? (
+                    <p className="text-sm font-bold text-accent tracking-wide">
+                      {svc.duration} &mdash; {svc.price}
+                    </p>
+                  ) : null;
+                })()}
+                {selectedTime && (
+                  <p className="text-[0.7rem] text-muted/60 mt-0.5">
+                    Labor rate: C$110 / hr + taxes
+                  </p>
                 )}
               </div>
             )}
