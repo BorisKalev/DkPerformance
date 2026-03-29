@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-
-// TODO: replace "#" with the real Instagram URL
-const INSTAGRAM_URL = "#";
+const INSTAGRAM_URL = "https://www.instagram.com/performance_dk/";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },

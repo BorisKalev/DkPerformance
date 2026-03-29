@@ -3,32 +3,32 @@ import { useState } from "react";
 const ITEMS = [
   {
     id: 1,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+01",
-    alt: "Engine build 01",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+01",
+    alt: "Engine image 01",
   },
   {
     id: 2,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+02",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+02",
     alt: "Turbo install",
   },
   {
     id: 3,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+03",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+03",
     alt: "Dyno run",
   },
   {
     id: 4,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+04",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+04",
     alt: "Suspension setup",
   },
   {
     id: 5,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+05",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+05",
     alt: "Custom exhaust",
   },
   {
     id: 6,
-    src: "https://placehold.co/800x600/111/e63f00?text=Build+06",
+    src: "https://placehold.co/800x600/111/e63f00?text=Image+06",
     alt: "Roll cage fab",
   },
 ];
@@ -45,7 +45,7 @@ export default function Gallery() {
       <div className="max-w-300 mx-auto">
         <header className="mb-10">
           <span className="section-label">The Work</span>
-          <h2 className="section-title">Build Gallery</h2>
+          <h2 className="section-title">Image Gallery</h2>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
