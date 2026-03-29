@@ -29,6 +29,12 @@ const SERVICES = [
     description:
       "A thorough cleaning and restoration of every interior and exterior surface, leaving your vehicle looking like new. Exterior wash and wax, carpet and seat cleaning, dashboard polishing, and full trim restoration.",
   },
+  {
+    icon: "🔎",
+    title: "Pre-Purchase Inspection",
+    description:
+      "Comprehensive and professional evaluation of the car, covering over 100+ points from engine performance to frame integrity.",
+  },
 ];
 
 export default function Services() {
@@ -44,7 +50,7 @@ export default function Services() {
           </p>
         </header>
 
-        <ul className="list-none grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-6">
+        <ul className="list-none grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map(({ icon, title, description }) => (
             <li
               key={title}

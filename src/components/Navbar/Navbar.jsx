@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import MobileMenu from "./MobileMenu";
+
 const INSTAGRAM_URL = "https://www.instagram.com/performance_dk/";
 
 const NAV_LINKS = [
@@ -42,7 +44,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-100 px-6 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-100 px-6 transition-all duration-300 max-sm:py-3.5 max-sm:bg-surface/95 max-sm:backdrop-blur-sm max-sm:shadow-[0_1px_0_var(--color-border)] ${
         scrolled
           ? "py-3.5 bg-surface/95 backdrop-blur-sm shadow-[0_1px_0_var(--color-border)]"
           : "py-5"
@@ -88,53 +90,24 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Hamburger (mobile) */}
+        {/* Menu toggle (mobile) */}
         <button
-          className="bg-border sm:hidden flex flex-col gap-1.25 p-1"
-          aria-label="Toggle menu"
+          className="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-accent/60 hover:shadow-[0_0_14px_rgba(230,63,0,0.2)] transition-all duration-200"
+          aria-label="Open menu"
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => setMenuOpen(true)}
         >
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "translate-y-1.75 rotate-45" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
-          />
-          <span
-            className={`block w-6 h-0.5 bg-foreground rounded transition-all duration-300 ${menuOpen ? "-translate-y-1.75 -rotate-45" : ""}`}
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            className="w-5 h-5" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <nav className="sm:hidden absolute top-full left-0 right-0 bg-bg border-t border-border flex flex-col">
-          {NAV_LINKS.map(({ label, href }) => (
-            <a
-              key={href}
-              href={href}
-              className="px-6 py-4 text-sm font-semibold tracking-[0.12em] uppercase text-muted border-b border-border hover:text-foreground transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              {label}
-            </a>
-          ))}
-
-          {/* Instagram row at bottom of mobile menu */}
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="DK Performance on Instagram"
-            className="px-6 py-4 flex items-center gap-2.5 text-sm font-semibold tracking-[0.12em] uppercase text-muted hover:text-accent transition-colors"
-            onClick={() => setMenuOpen(false)}
-          >
-            <InstagramIcon />
-            Instagram
-          </a>
-        </nav>
-      )}
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 }

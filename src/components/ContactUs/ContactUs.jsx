@@ -18,7 +18,7 @@ export default function ContactUs() {
       id="contact"
       className="relative overflow-hidden xl:h-svh md:h-[500px] h-[700px] flex items-center justify-center"
     >
-      {/* ── Video background ───────────────────────────────────── */}
+      {/* ── Video background */}
       <video
         src={Porsche360}
         autoPlay
@@ -29,10 +29,10 @@ export default function ContactUs() {
         aria-hidden="true"
       />
 
-      {/* ── Dark scrim ─────────────────────────────────────────── */}
+      {/* ── Dark scrim */}
       <div className="absolute inset-0 bg-black/55" />
 
-      {/* ── Glass card ─────────────────────────────────────────── */}
+      {/* ── Glass card */}
       <div className="relative z-10 w-full max-w-lg mx-auto px-5">
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-8 py-10 md:px-12 md:py-12 flex flex-col gap-6">
           {/* Heading */}

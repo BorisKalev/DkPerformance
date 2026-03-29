@@ -95,12 +95,11 @@ export default function AboutUs() {
                 car is in good hands.
               </p>
             </div>
-
             <Button
-              borderRadius="1.75rem"
+              borderRadius="0.5rem"
               containerClassName="w-52 h-14"
               borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
-              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-widest uppercase hover:text-accent"
+              className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent"
             >
               <a href="#appointment">Book a Service</a>
             </Button>

@@ -9,7 +9,6 @@ import michelinLogo from "@/assets/logos/michelin.png";
 import akebonoLogo from "@/assets/logos/akebono.png";
 import ngkLogo from "@/assets/logos/ngk.png";
 
-// ── Add / remove sponsors here ────────────────────────────────────────────
 const SPONSORS = [
   { src: hrLogo, alt: "H&R" },
   { src: bilsteinLogo, alt: "Bilstein" },
@@ -21,15 +20,12 @@ const SPONSORS = [
   { src: ngkLogo, alt: "NGK" },
 ];
 
-// Each sponsor list is cloned SETS times so the strip is always wider than
-// any viewport. The animation shifts exactly one clone (100 / SETS %) so the
-// loop is seamless. Visual speed stays the same regardless of SETS.
 const SETS = 4;
 
 export default function SponsorsTicker() {
   return (
     <div className="py-8 md:py-10 bg-page">
-      <div className="mx-auto w-3/4 2xl:w-2/5 px-10 lg:px-15">
+      <div className="mx-auto w-full 2xl:w-2/5 px-10 lg:px-15">
         {" "}
         {/* container fixed */}
         <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black,transparent)]">
