@@ -1,8 +1,5 @@
 import { useState } from "react";
-
-// ── TODO: replace with your real Google Form URL ──────────────────────────
-const GOOGLE_FORM_URL = "https://forms.gle/REPLACE_ME";
-// ─────────────────────────────────────────────────────────────────────────
+import { BOOKING_URL } from "@/lib/booking";
 
 const SERVICES = [
   { label: "Tire Change", duration: "1 hr", price: "Prices Vary" },
@@ -193,7 +190,7 @@ export default function Appointment() {
   // Opens the Google Form in a new tab — replace GOOGLE_FORM_URL above
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
+    window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
   };
 
   const formatDate = (d) =>
@@ -206,7 +203,10 @@ export default function Appointment() {
       : null;
 
   return (
-    <section id="appointment" className="py-20 px-6 bg-surface">
+    <section
+      id="appointment"
+      className="py-20 px-6 bg-bg border-t border-border"
+    >
       <div className="max-w-300 mx-auto">
         {/* Header */}
         <header className="mb-12">

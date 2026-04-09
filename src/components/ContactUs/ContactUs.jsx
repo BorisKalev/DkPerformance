@@ -30,7 +30,7 @@ export default function ContactUs() {
       />
 
       {/* ── Dark scrim */}
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* ── Glass card */}
       <div className="relative z-10 w-full max-w-lg mx-auto px-5">

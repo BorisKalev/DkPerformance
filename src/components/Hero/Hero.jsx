@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import SponsorsTicker from "../SponsorsTicker/SponsorsTicker";
-
+import BookNowButton from "../ui/BookNowButton";
 import dkLogoVideo from "../../videos/DkPerformanceAnimLogo.mp4";
 
 // ── Scroll-scrub constants ────────────────────────────────────────────────────
@@ -54,6 +54,14 @@ export default function Hero() {
           preload="auto"
           className="w-full max-w-5xl px-4 sm:px-8"
         />
+      </div>
+
+      {/* CTA */}
+      <div className="flex flex-col items-center gap-3 pb-10">
+        <BookNowButton size="lg" label="Book an Appointment" />
+        <p className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-muted/60">
+          Same-week slots available
+        </p>
       </div>
 
       {/* Ticker — always visible at the bottom of the first viewport */}

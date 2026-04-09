@@ -1,4 +1,5 @@
 import { HoverEffect } from "../ui/card-hover-effect";
+import BookNowButton from "../ui/BookNowButton";
 
 const SERVICES = [
   {
@@ -53,6 +54,15 @@ export default function Services() {
         </header>
 
         <HoverEffect items={SERVICES} />
+
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
+          <p className="text-sm text-muted max-w-[42ch] leading-relaxed">
+            Not sure which service you need?{" "}
+            <span className="text-foreground font-medium">Book a slot</span> and
+            our team will guide you through the right option for your vehicle.
+          </p>
+          <BookNowButton label="Book Now" size="sm" className="shrink-0" />
+        </div>
       </div>
     </section>
   );

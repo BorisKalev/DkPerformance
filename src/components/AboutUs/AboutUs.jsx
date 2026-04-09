@@ -96,10 +96,10 @@ export default function AboutUs() {
               </p>
             </div>
             <Button
-              borderRadius="0.5rem"
+              borderRadius="1.75rem"
               containerClassName="w-52 h-14"
               borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
-              className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent"
+              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-widest uppercase hover:text-accent"
             >
               <a href="#appointment">Book a Service</a>
             </Button>
