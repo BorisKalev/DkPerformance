@@ -1,13 +1,12 @@
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import AboutUs from './components/AboutUs/AboutUs'
-import Services from './components/Services/Services'
-import Gallery from './components/Gallery/Gallery'
-import Appointment from './components/Appointment/Appointment'
-import ContactUs from './components/ContactUs/ContactUs'
-import LocationSection from './components/LocationSection/LocationSection'
-import Footer from './components/Footer/Footer'
-import CookieBanner from './components/ui/cookie-banner'
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Services from "./components/Services/Services";
+import Appointment from "./components/Appointment/Appointment";
+import ContactUs from "./components/ContactUs/ContactUs";
+import LocationSection from "./components/LocationSection/LocationSection";
+import Footer from "./components/Footer/Footer";
+import CookieBanner from "./components/ui/cookie-banner";
 
 export default function App() {
   return (
@@ -17,7 +16,6 @@ export default function App() {
         <Hero />
         <AboutUs />
         <Services />
-        <Gallery />
         <Appointment />
         <ContactUs />
         <LocationSection />
@@ -25,5 +23,5 @@ export default function App() {
       <Footer />
       <CookieBanner />
     </>
-  )
+  );
 }
