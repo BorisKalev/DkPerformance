@@ -16,7 +16,7 @@ export default function ContactUs() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden xl:h-svh md:h-[500px] h-[700px] flex items-center justify-center"
+      className="relative overflow-hidden xl:h-svh xl:py-0 py-16 md:py-24 flex items-center justify-center"
     >
       {/* ── Video background */}
       <video
