@@ -93,7 +93,7 @@ export default function MobileMenu({ open, onClose }) {
             </div>
 
             {/* Centered nav list */}
-            <nav className="flex-1 flex flex-col items-center justify-center w-full px-10 gap-0">
+            <nav className="flex-1 flex flex-col items-center justify-start pt-8 w-full px-10 gap-0">
               {NAV_ITEMS.map(({ label, href }, i) => (
                 <motion.a
                   key={label}
@@ -147,9 +147,9 @@ export default function MobileMenu({ open, onClose }) {
             </nav>
 
             {/* Bottom logo */}
-            <div className="pb-10 flex justify-center">
+            <div className="pt-6 pb-10 flex justify-center">
               <span className="font-russo text-[1rem] tracking-[0.06em] text-white/20">
-                DK <span className="text-accent/40">Performance</span>
+                DK <span className="text-white/20">Performance</span>
               </span>
             </div>
           </motion.div>
