@@ -3,7 +3,6 @@ const INSTAGRAM_URL = "https://www.instagram.com/performance_dk/";
 const LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
   { label: "Book Now", href: "#appointment" },
 ];
 
