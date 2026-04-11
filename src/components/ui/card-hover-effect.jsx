@@ -33,9 +33,7 @@ export function HoverEffect({ items, className }) {
             "bg-surface2 border border-border",
             "group-hover:border-accent/50 transition-colors duration-300"
           )}>
-            <span className="text-[2rem] leading-none text-accent" aria-hidden="true">
-              {item.icon}
-            </span>
+            <item.icon className="w-8 h-8 text-accent" aria-hidden="true" />
             <h3 className="text-[1.05rem] font-bold tracking-[0.02em] text-accent">
               {item.title}
             </h3>

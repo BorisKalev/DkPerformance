@@ -1,39 +1,40 @@
+import { Wrench, Gauge, Search, Cog, Sparkles, CarFront } from "lucide-react";
 import { HoverEffect } from "../ui/card-hover-effect";
 import BookNowButton from "../ui/BookNowButton";
 
 const SERVICES = [
   {
-    icon: "🔧",
+    icon: Wrench,
     title: "General Maintenance",
     description:
       "Regular maintenance is crucial for keeping your car in good working condition and preventing breakdowns. This includes oil and filter changes, brake and tire checks, and full engine and electrical inspections.",
   },
   {
-    icon: "⚡",
+    icon: Gauge,
     title: "Performance",
     description:
       "Performance upgrades enhance the power, handling, and overall driving experience of your vehicle. From high-flow exhaust systems and suspension upgrades to performance chips and tuners — we build cars that perform.",
   },
   {
-    icon: "🔍",
+    icon: Search,
     title: "Inspections",
     description:
       "Our inspection process examines your vehicle thoroughly to ensure it is safe and roadworthy. We cover brakes, suspension, steering, tires, emissions, and all critical safety systems.",
   },
   {
-    icon: "⚙️",
+    icon: Cog,
     title: "Repair",
     description:
       "Our technicians use specialized tools and equipment to diagnose and repair all types of vehicle issues — including engine, transmission, brakes, suspension, and electrical systems.",
   },
   {
-    icon: "✨",
+    icon: Sparkles,
     title: "Detailing",
     description:
       "A thorough cleaning and restoration of every interior and exterior surface, leaving your vehicle looking like new. Exterior wash and wax, carpet and seat cleaning, dashboard polishing, and full trim restoration.",
   },
   {
-    icon: "🔎",
+    icon: CarFront,
     title: "Pre-Purchase Inspection",
     description:
       "Comprehensive and professional evaluation of the car, covering over 100+ points from engine performance to frame integrity.",
