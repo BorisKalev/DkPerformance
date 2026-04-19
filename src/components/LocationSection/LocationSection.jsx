@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/moving-border";
 
 const MAPS_EMBED_URL =

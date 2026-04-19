@@ -1,3 +1,4 @@
+"use client";
 import { Wrench, Gauge, Search, Cog, Sparkles, CarFront } from "lucide-react";
 import { HoverEffect } from "../ui/card-hover-effect";
 import BookNowButton from "../ui/BookNowButton";

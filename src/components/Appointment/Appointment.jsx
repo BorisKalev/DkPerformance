@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { BOOKING_URL } from "@/lib/booking";
 

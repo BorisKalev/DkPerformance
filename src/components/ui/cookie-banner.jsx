@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 
 const STORAGE_KEY = "dk_cookie_consent";

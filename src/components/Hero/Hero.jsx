@@ -1,7 +1,8 @@
+"use client";
 import { useRef, useEffect } from "react";
 import SponsorsTicker from "../SponsorsTicker/SponsorsTicker";
 import BookNowButton from "../ui/BookNowButton";
-import dkLogoVideo from "../../videos/DkPerformanceAnimLogo.mp4";
+const dkLogoVideo = "/videos/DkPerformanceAnimLogo.mp4";
 
 // ── Scroll-scrub constants ────────────────────────────────────────────────────
 //   SCROLL_RANGE  px of scroll to cover the full animation (more = slower)

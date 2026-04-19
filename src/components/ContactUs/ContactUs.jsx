@@ -1,6 +1,7 @@
+"use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/moving-border";
-import Porsche360 from "@/videos/Porsche360D.mp4";
+const Porsche360 = "/videos/Porsche360D.mp4";
 
 export default function ContactUs() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -37,7 +38,7 @@ export default function ContactUs() {
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-8 py-10 md:px-12 md:py-12 flex flex-col gap-6">
           {/* Heading */}
           <div className="flex flex-col gap-1">
-            <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-[#e63f00]">
+            <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-accent">
               Get in Touch
             </span>
             <h2 className="font-russo text-[clamp(1.8rem,4vw,2.8rem)] leading-tight tracking-wide text-white">
@@ -53,7 +54,7 @@ export default function ContactUs() {
                 htmlFor="contact-name"
                 className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-white/50"
               >
-                Name <span className="text-[#e63f00]">*</span>
+                Name <span className="text-accent">*</span>
               </label>
               <input
                 id="contact-name"
@@ -63,7 +64,7 @@ export default function ContactUs() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="John Smith"
-                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#e63f00]/60 focus:bg-white/8 transition-colors duration-200"
+                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
 
@@ -73,7 +74,7 @@ export default function ContactUs() {
                 htmlFor="contact-email"
                 className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-white/50"
               >
-                Email <span className="text-[#e63f00]">*</span>
+                Email <span className="text-accent">*</span>
               </label>
               <input
                 id="contact-email"
@@ -83,7 +84,7 @@ export default function ContactUs() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
-                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#e63f00]/60 focus:bg-white/8 transition-colors duration-200"
+                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
 
@@ -102,7 +103,7 @@ export default function ContactUs() {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Tell us about your vehicle and what you need…"
-                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 resize-none focus:outline-none focus:border-[#e63f00]/60 focus:bg-white/8 transition-colors duration-200"
+                className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 resize-none focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
 
@@ -113,7 +114,7 @@ export default function ContactUs() {
                 borderRadius="0.5rem"
                 containerClassName="w-full h-13"
                 borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
-                className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-[#e63f00] transition-colors duration-200"
+                className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent transition-colors duration-200"
               >
                 Send Message
               </Button>

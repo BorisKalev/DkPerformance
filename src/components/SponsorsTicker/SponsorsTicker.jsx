@@ -1,23 +1,15 @@
+"use client";
 import { motion } from "framer-motion";
 
-import hrLogo from "@/assets/logos/hr.png";
-import bilsteinLogo from "@/assets/logos/bilstein.png";
-import aprLogo from "@/assets/logos/apr.png";
-import liquiMolyLogo from "@/assets/logos/liqui-moly.png";
-import mannFilterLogo from "@/assets/logos/mann-filter.png";
-import michelinLogo from "@/assets/logos/michelin.png";
-import akebonoLogo from "@/assets/logos/akebono.png";
-import ngkLogo from "@/assets/logos/ngk.png";
-
 const SPONSORS = [
-  { src: hrLogo, alt: "H&R" },
-  { src: bilsteinLogo, alt: "Bilstein" },
-  { src: aprLogo, alt: "APR" },
-  { src: liquiMolyLogo, alt: "Liqui Moly" },
-  { src: mannFilterLogo, alt: "Mann Filter" },
-  { src: michelinLogo, alt: "Michelin" },
-  { src: akebonoLogo, alt: "Akebono" },
-  { src: ngkLogo, alt: "NGK" },
+  { src: "/logos/hr.png",          alt: "H&R" },
+  { src: "/logos/bilstein.png",    alt: "Bilstein" },
+  { src: "/logos/apr.png",         alt: "APR" },
+  { src: "/logos/liqui-moly.png",  alt: "Liqui Moly" },
+  { src: "/logos/mann-filter.png", alt: "Mann Filter" },
+  { src: "/logos/michelin.png",    alt: "Michelin" },
+  { src: "/logos/akebono.png",     alt: "Akebono" },
+  { src: "/logos/ngk.png",         alt: "NGK" },
 ];
 
 const SETS = 4;
@@ -26,8 +18,6 @@ export default function SponsorsTicker() {
   return (
     <div className="py-8 md:py-10 bg-page">
       <div className="mx-auto w-full 2xl:w-2/5 px-10 lg:px-15">
-        {" "}
-        {/* container fixed */}
         <div className="flex overflow-hidden mask-[linear-gradient(to_right,transparent,black,transparent)]">
           <motion.div
             className="flex gap-14 flex-none pr-14"
