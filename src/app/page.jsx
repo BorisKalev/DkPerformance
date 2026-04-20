@@ -5,6 +5,7 @@ import Services from "@/components/Services/Services";
 import Appointment from "@/components/Appointment/Appointment";
 import ContactUs from "@/components/ContactUs/ContactUs";
 import LocationSection from "@/components/LocationSection/LocationSection";
+import FAQ from "@/components/FAQ/FAQ";
 import Footer from "@/components/Footer/Footer";
 import CookieBanner from "@/components/ui/cookie-banner";
 
@@ -17,8 +18,9 @@ export default function Home() {
         <AboutUs />
         <Services />
         <Appointment />
-        <ContactUs />
         <LocationSection />
+        <FAQ />
+        <ContactUs />
       </main>
       <Footer />
       <CookieBanner />

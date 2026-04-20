@@ -93,6 +93,22 @@ export const translations = {
     location_sat:        "Sat",
     location_sun:        "Sun",
 
+    // ── FAQ
+    faq_label:   "FAQ",
+    faq_heading: "Frequently Asked Questions",
+    faq_q1: "What are your opening hours?",
+    faq_a1: "We are open Monday through Friday, from 9:00 AM to 5:00 PM. We are closed on weekends.",
+    faq_q2: "Do I need to book an appointment in advance?",
+    faq_a2: "Yes, we recommend booking ahead to secure your preferred time slot. Book through our online portal and we'll confirm within one business day.",
+    faq_q3: "Do you provide a quote before starting the work?",
+    faq_a3: "Absolutely. We always provide a detailed estimate before beginning any work. No surprises — you approve the quote before we start.",
+    faq_q4: "How long does a standard repair take?",
+    faq_a4: "It depends on the service. An oil change or tire swap typically takes about 1 hour. More complex repairs may take longer — we'll give you a time estimate when you drop off your vehicle.",
+    faq_q5: "Do you guarantee your repairs?",
+    faq_a5: "Yes, we stand behind all our work. If you experience any issue related to a service we performed, bring it back and we'll make it right.",
+    faq_q6: "What payment methods do you accept?",
+    faq_a6: "We accept cash, credit card, and debit. Payment is due upon completion of the service.",
+
     // ── Footer
     footer_tagline:   "Built different. Built right.",
     footer_copyright: "All rights reserved.",
@@ -197,6 +213,22 @@ export const translations = {
     location_fri:        "Ven",
     location_sat:        "Sam",
     location_sun:        "Dim",
+
+    // ── FAQ
+    faq_label:   "FAQ",
+    faq_heading: "Questions fréquentes",
+    faq_q1: "Quels sont vos horaires d'ouverture ?",
+    faq_a1: "Nous sommes ouverts du lundi au vendredi, de 9h00 à 17h00. Nous sommes fermés les weekends.",
+    faq_q2: "Faut-il prendre rendez-vous à l'avance ?",
+    faq_a2: "Oui, nous recommandons de réserver à l'avance pour garantir votre créneau préféré. Réservez via notre portail en ligne et nous confirmons dans un délai d'un jour ouvrable.",
+    faq_q3: "Donnez-vous un devis avant de commencer les travaux ?",
+    faq_a3: "Absolument. Nous fournissons toujours un estimé détaillé avant de commencer tout travail. Aucune surprise — vous approuvez le devis avant que nous commencions.",
+    faq_q4: "Combien de temps prend une réparation standard ?",
+    faq_a4: "Cela dépend du service. Une vidange d'huile ou un changement de pneus prend généralement environ 1 heure. Les réparations plus complexes peuvent prendre plus de temps — nous vous donnerons une estimation lors du dépôt de votre véhicule.",
+    faq_q5: "Garantissez-vous vos réparations ?",
+    faq_a5: "Oui, nous garantissons tout notre travail. Si vous constatez un problème lié à un service que nous avons effectué, ramenez votre véhicule et nous rectifierons la situation.",
+    faq_q6: "Quels modes de paiement acceptez-vous ?",
+    faq_a6: "Nous acceptons les paiements en espèces, par carte de crédit et par carte de débit. Le paiement est dû à la fin du service.",
 
     // ── Footer
     footer_tagline:   "Construit différemment. Construit correctement.",
