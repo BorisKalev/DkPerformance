@@ -8,18 +8,18 @@
 
 @theme {
   /* Colors */
-  --color-bg:       #0a0a0a;
-  --color-surface:  #111111;
-  --color-surface2: #1a1a1a;
-  --color-border:   #2a2a2a;
-  --color-accent:   #e63f00;
-  --color-accent-hover: #ff4d00;
-  --color-foreground: #f0f0f0;
-  --color-muted:    #888888;
+  --color-bg:       #ffffff;
+  --color-surface:  #f5f5f5;
+  --color-surface2: #e8e8e8;
+  --color-border:   #d4d4d4;
+  --color-accent:   #C8102E;
+  --color-accent-hover: #a80d26;
+  --color-foreground: #1a1a1a;
+  --color-muted:    #666666;
 
   /* Global page tokens */
   --color-page:    #ffffff;
-  --color-primary: #261e1b;
+  --color-primary: #1a1a1a;
 
   /* Typography */
   --font-heading: 'Bebas Neue', Impact, sans-serif;
@@ -172,9 +172,9 @@
 /* DK Performance brand token overrides — must come after @theme inline */
 @theme {
   --font-russo:         'Russo One', sans-serif;
-  --color-accent:       #e63f00;
-  --color-accent-hover: #ff4d00;
-  --color-foreground:   #f0f0f0;
-  --color-muted:        #888888;
-  --color-border:       #2a2a2a;
+  --color-accent:       #C8102E;
+  --color-accent-hover: #a80d26;
+  --color-foreground:   #1a1a1a;
+  --color-muted:        #666666;
+  --color-border:       #d4d4d4;
 }

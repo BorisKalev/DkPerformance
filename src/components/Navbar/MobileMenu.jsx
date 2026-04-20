@@ -64,7 +64,7 @@ export default function MobileMenu({ open, onClose }) {
               x: "100%",
               transition: { duration: 0.22, ease: "easeIn" },
             }}
-            className="fixed top-0 inset-x-0 h-[75vh] z-200 flex flex-col bg-black md:hidden"
+            className="fixed top-0 inset-x-0 h-[75vh] z-200 flex flex-col bg-white border-b border-border md:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
@@ -74,7 +74,7 @@ export default function MobileMenu({ open, onClose }) {
               <button
                 onClick={onClose}
                 aria-label="Close menu"
-                className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-accent/60 transition-all duration-200"
+                className="w-10 h-10 flex items-center justify-center rounded-lg border border-border text-muted hover:text-foreground hover:border-accent/60 transition-all duration-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +105,8 @@ export default function MobileMenu({ open, onClose }) {
                   animate="visible"
                   exit="exit"
                   onClick={onClose}
-                  className="w-full text-center py-5 border-b border-white/8 text-[1.6rem] font-black tracking-widest uppercase text-accent hover:text-white hover:bg-white/4 transition-all duration-200"
-                  style={{ textShadow: "0 0 24px rgba(230,63,0,0.35)" }}
+                  className="w-full text-center py-5 border-b border-border/60 text-[1.6rem] font-black tracking-widest uppercase text-accent hover:text-foreground hover:bg-foreground/5 transition-all duration-200"
+                  style={{ textShadow: "0 0 24px rgba(200,16,46,0.25)" }}
                 >
                   {label}
                 </motion.a>
@@ -124,8 +124,8 @@ export default function MobileMenu({ open, onClose }) {
                 exit="exit"
                 onClick={onClose}
                 aria-label="DK Performance on Instagram"
-                className="w-full flex items-center justify-center gap-3 py-5 border-b border-white/8 text-[1.6rem] font-black tracking-widest uppercase text-accent hover:text-white hover:bg-white/4 transition-all duration-200"
-                style={{ textShadow: "0 0 24px rgba(230,63,0,0.35)" }}
+                className="w-full flex items-center justify-center gap-3 py-5 border-b border-border/60 text-[1.6rem] font-black tracking-widest uppercase text-accent hover:text-foreground hover:bg-foreground/5 transition-all duration-200"
+                style={{ textShadow: "0 0 24px rgba(200,16,46,0.25)" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -149,8 +149,8 @@ export default function MobileMenu({ open, onClose }) {
 
             {/* Bottom logo */}
             <div className="pt-6 pb-10 flex justify-center">
-              <span className="font-russo text-[1rem] tracking-[0.06em] text-white/20">
-                DK <span className="text-white/20">Performance</span>
+              <span className="font-russo text-[1rem] tracking-[0.06em] text-foreground/20">
+                DK <span className="text-foreground/20">Performance</span>
               </span>
             </div>
           </motion.div>

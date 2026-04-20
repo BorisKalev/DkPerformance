@@ -55,9 +55,9 @@ export default function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-russo text-[1.6rem] tracking-[0.04em] text-white"
+          className="font-russo text-[1.6rem] tracking-[0.04em] text-foreground"
         >
-          DK<span className="text-white"> Performance</span>
+          DK<span className="text-foreground"> Performance</span>
         </a>
 
         {/* Desktop nav + Instagram */}
@@ -93,7 +93,7 @@ export default function Navbar() {
 
         {/* Menu toggle (mobile) */}
         <button
-          className="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-accent/60 hover:shadow-[0_0_14px_rgba(230,63,0,0.2)] transition-all duration-200"
+          className="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted hover:text-foreground hover:border-accent/60 hover:shadow-[0_0_14px_rgba(200,16,46,0.2)] transition-all duration-200"
           aria-label="Open menu"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(true)}

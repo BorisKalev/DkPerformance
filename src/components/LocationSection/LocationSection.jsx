@@ -21,15 +21,15 @@ export default function LocationSection() {
   return (
     <section
       id="location"
-      className="py-20 px-6 bg-linear-to-b from-[#0a0a0a] to-[#111111]"
+      className="py-20 px-6 bg-surface"
     >
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
         {/* ── Heading*/}
         <div className="text-center flex flex-col gap-2">
-          <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-[#e63f00]">
+          <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-accent">
             Our Location
           </span>
-          <h2 className="font-russo text-4xl font-black tracking-wide text-white">
+          <h2 className="font-russo text-4xl font-black tracking-wide text-foreground">
             Find Us
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default function LocationSection() {
           <div className="relative">
             {/* Floating pin */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
-              <div className="w-9 h-9 rounded-full bg-[#e63f00] flex items-center justify-center shadow-lg shadow-[#e63f00]/40">
+              <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center shadow-lg shadow-accent/40">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -55,46 +55,41 @@ export default function LocationSection() {
                   />
                 </svg>
               </div>
-              <div className="w-0.5 h-4 bg-[#e63f00]/50" />
+              <div className="w-0.5 h-4 bg-accent/50" />
             </div>
 
             {/* Glass map frame */}
-            <div className="relative rounded-3xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl h-[500px] md:h-[600px] lg:h-[700px]">
+            <div className="relative rounded-3xl overflow-hidden border border-border shadow-lg h-125 md:h-150 lg:h-175">
               <iframe
                 title="DK Performance location"
                 src={MAPS_EMBED_URL}
                 className="w-full h-full border-0"
-                style={{
-                  filter: "invert(90%) hue-rotate(180deg)",
-                  opacity: 0.92,
-                }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              {/* Inner vignette */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/10" />
+              <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-border" />
             </div>
           </div>
 
           {/* Hours + Button */}
           <div className="flex flex-col gap-8 lg:pt-6">
             {/* Hours card */}
-            <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-6 py-7 flex flex-col gap-1">
-              <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-[#e63f00] mb-3">
+            <div className="bg-surface2 border border-border rounded-2xl px-6 py-7 flex flex-col gap-1">
+              <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-accent mb-3">
                 Hours of Operation
               </span>
               {HOURS.map(({ day, hours, closed }) => (
                 <div
                   key={day}
-                  className="flex justify-between items-center py-2 border-b border-white/5 last:border-0"
+                  className="flex justify-between items-center py-2 border-b border-border/50 last:border-0"
                 >
-                  <span className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-white/60">
+                  <span className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-muted">
                     {day}
                   </span>
                   <span
                     className={`text-[0.8rem] font-medium ${
-                      closed ? "text-white/25" : "text-white/85"
+                      closed ? "text-muted/40" : "text-foreground"
                     }`}
                   >
                     {hours}
@@ -112,7 +107,7 @@ export default function LocationSection() {
               borderRadius="0.5rem"
               containerClassName="w-full h-13"
               borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
-              className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-[#e63f00] transition-colors duration-200"
+              className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent transition-colors duration-200"
             >
               <span className="flex items-center gap-2.5">
                 {/* Google Maps pin icon */}
