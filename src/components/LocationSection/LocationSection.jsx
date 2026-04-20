@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/moving-border";
+import { useTranslation } from "@/context/LanguageContext";
 
 const MAPS_EMBED_URL =
   "https://maps.google.com/maps?q=3954+Boulevard+Leman,+Laval,+Quebec+H7E+1A1,+Canada&t=&z=15&ie=UTF8&iwloc=&output=embed";
@@ -7,38 +8,34 @@ const MAPS_EMBED_URL =
 const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=3954+Boulevard+Leman,+Laval,+Quebec+H7E+1A1,+Canada";
 
-const HOURS = [
-  { day: "Mon", hours: "09:00 a.m. – 05:00 p.m." },
-  { day: "Tue", hours: "09:00 a.m. – 05:00 p.m." },
-  { day: "Wed", hours: "09:00 a.m. – 05:00 p.m." },
-  { day: "Thu", hours: "09:00 a.m. – 05:00 p.m." },
-  { day: "Fri", hours: "09:00 a.m. – 05:00 p.m." },
-  { day: "Sat", hours: "Closed", closed: true },
-  { day: "Sun", hours: "Closed", closed: true },
+const HOURS_DATA = [
+  { dayKey: "location_mon", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_tue", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_wed", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_thu", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_fri", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_sat", hours: null, closed: true },
+  { dayKey: "location_sun", hours: null, closed: true },
 ];
 
 export default function LocationSection() {
+  const { t } = useTranslation();
+
   return (
-    <section
-      id="location"
-      className="py-20 px-6 bg-surface"
-    >
+    <section id="location" className="py-20 px-6 bg-surface">
       <div className="max-w-6xl mx-auto flex flex-col gap-12">
-        {/* ── Heading*/}
         <div className="text-center flex flex-col gap-2">
           <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-accent">
-            Our Location
+            {t("location_label")}
           </span>
           <h2 className="font-russo text-4xl font-black tracking-wide text-foreground">
-            Find Us
+            {t("location_heading")}
           </h2>
         </div>
 
-        {/* ── Map + Info grid*/}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
           {/* Map */}
           <div className="relative">
-            {/* Floating pin */}
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center">
               <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center shadow-lg shadow-accent/40">
                 <svg
@@ -58,7 +55,6 @@ export default function LocationSection() {
               <div className="w-0.5 h-4 bg-accent/50" />
             </div>
 
-            {/* Glass map frame */}
             <div className="relative rounded-3xl overflow-hidden border border-border shadow-lg h-125 md:h-150 lg:h-175">
               <iframe
                 title="DK Performance location"
@@ -74,31 +70,25 @@ export default function LocationSection() {
 
           {/* Hours + Button */}
           <div className="flex flex-col gap-8 lg:pt-6">
-            {/* Hours card */}
             <div className="bg-surface2 border border-border rounded-2xl px-6 py-7 flex flex-col gap-1">
               <span className="text-[0.65rem] font-bold tracking-[0.18em] uppercase text-accent mb-3">
-                Hours of Operation
+                {t("location_hours")}
               </span>
-              {HOURS.map(({ day, hours, closed }) => (
+              {HOURS_DATA.map(({ dayKey, hours, closed }) => (
                 <div
-                  key={day}
+                  key={dayKey}
                   className="flex justify-between items-center py-2 border-b border-border/50 last:border-0"
                 >
                   <span className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-muted">
-                    {day}
+                    {t(dayKey)}
                   </span>
-                  <span
-                    className={`text-[0.8rem] font-medium ${
-                      closed ? "text-muted/40" : "text-foreground"
-                    }`}
-                  >
-                    {hours}
+                  <span className={`text-[0.8rem] font-medium ${closed ? "text-muted/40" : "text-foreground"}`}>
+                    {closed ? t("location_closed") : hours}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* Get Directions button */}
             <Button
               as="a"
               href={DIRECTIONS_URL}
@@ -110,13 +100,12 @@ export default function LocationSection() {
               className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent transition-colors duration-200"
             >
               <span className="flex items-center gap-2.5">
-                {/* Google Maps pin icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 shrink-0" aria-hidden="true">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 1.61.47 3.11 1.27 4.37L12 2z" fill="#C5221F"/>
                   <circle cx="12" cy="9" r="2.5" fill="white"/>
                 </svg>
-                Get Directions
+                {t("location_directions")}
               </span>
             </Button>
           </div>

@@ -1,14 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import MobileMenu from "./MobileMenu";
+import { useTranslation } from "@/context/LanguageContext";
 
 const INSTAGRAM_URL = "https://www.instagram.com/performance_dk/";
-
-const NAV_LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Location", href: "#location" },
-];
 
 function InstagramIcon({ className = "" }) {
   return (
@@ -35,6 +30,13 @@ function InstagramIcon({ className = "" }) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { lang, setLang, t } = useTranslation();
+
+  const NAV_LINKS = [
+    { label: t("nav_about"),    href: "#about" },
+    { label: t("nav_services"), href: "#services" },
+    { label: t("nav_location"), href: "#location" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -59,7 +61,7 @@ export default function Navbar() {
           DK<span className="text-foreground"> Performance</span>
         </a>
 
-        {/* Desktop nav + Instagram */}
+        {/* Desktop nav + controls */}
         <nav className="hidden sm:flex items-center gap-10">
           {NAV_LINKS.map(({ label, href }) => (
             <a
@@ -77,8 +79,19 @@ export default function Navbar() {
             </a>
           ))}
 
-          {/* Instagram — separated by a subtle divider */}
           <span className="w-px h-4 bg-muted/30" aria-hidden="true" />
+
+          {/* Language toggle */}
+          <button
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            aria-label="Toggle language"
+            className="text-[0.75rem] font-bold tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors duration-200"
+          >
+            {lang === "en" ? "FR" : "EN"}
+          </button>
+
+          <span className="w-px h-4 bg-muted/30" aria-hidden="true" />
+
           <a
             href={INSTAGRAM_URL}
             target="_blank"
@@ -90,29 +103,39 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Menu toggle (mobile) */}
-        <button
-          className="sm:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted hover:text-foreground hover:border-accent/60 hover:shadow-[0_0_14px_rgba(200,16,46,0.2)] transition-all duration-200"
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(true)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-5 h-5"
-            aria-hidden="true"
+        {/* Mobile: lang toggle + hamburger */}
+        <div className="sm:hidden flex items-center gap-3">
+          <button
+            onClick={() => setLang(lang === "en" ? "fr" : "en")}
+            aria-label="Toggle language"
+            className="text-[0.7rem] font-bold tracking-[0.14em] uppercase text-muted hover:text-accent transition-colors duration-200"
           >
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-        </button>
+            {lang === "en" ? "FR" : "EN"}
+          </button>
+
+          <button
+            className="flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted hover:text-foreground hover:border-accent/60 hover:shadow-[0_0_14px_rgba(200,16,46,0.2)] transition-all duration-200"
+            aria-label="Open menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(true)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-5 h-5"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />

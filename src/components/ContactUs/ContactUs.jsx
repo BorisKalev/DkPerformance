@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/moving-border";
+import { useTranslation } from "@/context/LanguageContext";
+
 const Porsche360 = "/videos/Porsche360D.mp4";
 
 export default function ContactUs() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const { t } = useTranslation();
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: wire up backend / email service
   };
 
   return (
@@ -19,7 +21,7 @@ export default function ContactUs() {
       id="contact"
       className="relative overflow-hidden xl:h-svh xl:py-0 py-16 md:py-24 flex items-center justify-center"
     >
-      {/* ── Video background */}
+      {/* Video background */}
       <video
         src={Porsche360}
         autoPlay
@@ -30,23 +32,21 @@ export default function ContactUs() {
         aria-hidden="true"
       />
 
-      {/* ── Dark scrim */}
+      {/* Dark scrim */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* ── Glass card */}
+      {/* Glass card */}
       <div className="relative z-10 w-full max-w-lg mx-auto px-5">
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl px-8 py-10 md:px-12 md:py-12 flex flex-col gap-6">
-          {/* Heading */}
           <div className="flex flex-col gap-1">
             <span className="text-[0.7rem] font-bold tracking-[0.18em] uppercase text-accent">
-              Get in Touch
+              {t("contact_label")}
             </span>
             <h2 className="font-russo text-[clamp(1.8rem,4vw,2.8rem)] leading-tight tracking-wide text-white">
-              Contact Us
+              {t("contact_heading")}
             </h2>
           </div>
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {/* Name */}
             <div className="flex flex-col gap-1.5">
@@ -54,7 +54,7 @@ export default function ContactUs() {
                 htmlFor="contact-name"
                 className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-white/50"
               >
-                Name <span className="text-accent">*</span>
+                {t("contact_name")} <span className="text-accent">*</span>
               </label>
               <input
                 id="contact-name"
@@ -63,7 +63,7 @@ export default function ContactUs() {
                 required
                 value={form.name}
                 onChange={handleChange}
-                placeholder="John Smith"
+                placeholder={t("contact_name_placeholder")}
                 className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
@@ -74,7 +74,7 @@ export default function ContactUs() {
                 htmlFor="contact-email"
                 className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-white/50"
               >
-                Email <span className="text-accent">*</span>
+                {t("contact_email")} <span className="text-accent">*</span>
               </label>
               <input
                 id="contact-email"
@@ -83,7 +83,7 @@ export default function ContactUs() {
                 required
                 value={form.email}
                 onChange={handleChange}
-                placeholder="john@example.com"
+                placeholder={t("contact_email_placeholder")}
                 className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
@@ -94,7 +94,7 @@ export default function ContactUs() {
                 htmlFor="contact-message"
                 className="text-[0.7rem] font-semibold tracking-[0.14em] uppercase text-white/50"
               >
-                Message
+                {t("contact_message")}
               </label>
               <textarea
                 id="contact-message"
@@ -102,7 +102,7 @@ export default function ContactUs() {
                 rows={4}
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Tell us about your vehicle and what you need…"
+                placeholder={t("contact_msg_placeholder")}
                 className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-3 text-sm text-white placeholder:text-white/25 resize-none focus:outline-none focus:border-accent/60 focus:bg-white/8 transition-colors duration-200"
               />
             </div>
@@ -116,32 +116,32 @@ export default function ContactUs() {
                 borderClassName="bg-[radial-gradient(var(--color-accent)_40%,transparent_60%)]"
                 className="bg-black/80 text-white border-white/10 text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent transition-colors duration-200"
               >
-                Send Message
+                {t("contact_submit")}
               </Button>
             </div>
           </form>
 
           {/* reCAPTCHA notice */}
           <p className="text-[0.65rem] text-white/30 leading-relaxed text-center">
-            This site is protected by reCAPTCHA and the Google{" "}
+            {t("contact_recaptcha")}{" "}
             <a
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-white/50 transition-colors duration-200"
             >
-              Privacy Policy
+              {t("contact_privacy")}
             </a>{" "}
-            and{" "}
+            {t("contact_and")}{" "}
             <a
               href="https://policies.google.com/terms"
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-white/50 transition-colors duration-200"
             >
-              Terms of Service
+              {t("contact_terms")}
             </a>{" "}
-            apply.
+            {t("contact_apply")}
           </p>
         </div>
       </div>

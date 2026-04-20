@@ -1,16 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "@/context/LanguageContext";
 
 const INSTAGRAM_URL = "https://www.instagram.com/performance_dk/";
-
-const NAV_ITEMS = [
-  { label: "Home", href: "#hero" },
-  { label: "Services", href: "#services" },
-  { label: "Appointment", href: "#appointment" },
-  { label: "Contact", href: "#contact" },
-  { label: "Location", href: "#location" },
-];
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -28,18 +21,25 @@ const itemVariants = {
 };
 
 export default function MobileMenu({ open, onClose }) {
+  const { t } = useTranslation();
+
+  const NAV_ITEMS = [
+    { labelKey: "nav_home",        href: "#hero" },
+    { labelKey: "nav_services",    href: "#services" },
+    { labelKey: "nav_appointment", href: "#appointment" },
+    { labelKey: "nav_contact",     href: "#contact" },
+    { labelKey: "nav_location",    href: "#location" },
+  ];
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
     <AnimatePresence>
       {open && (
         <>
-          {/* Tap-to-close area below the panel */}
           <motion.div
             key="backdrop"
             initial={{ opacity: 0 }}
@@ -54,16 +54,8 @@ export default function MobileMenu({ open, onClose }) {
           <motion.div
             key="mobile-menu"
             initial={{ opacity: 0, x: "100%" }}
-            animate={{
-              opacity: 1,
-              x: 0,
-              transition: { type: "spring", damping: 30, stiffness: 280 },
-            }}
-            exit={{
-              opacity: 0,
-              x: "100%",
-              transition: { duration: 0.22, ease: "easeIn" },
-            }}
+            animate={{ opacity: 1, x: 0, transition: { type: "spring", damping: 30, stiffness: 280 } }}
+            exit={{ opacity: 0, x: "100%", transition: { duration: 0.22, ease: "easeIn" } }}
             className="fixed top-0 inset-x-0 h-[75vh] z-200 flex flex-col bg-white border-b border-border md:hidden"
             role="dialog"
             aria-modal="true"
@@ -93,11 +85,11 @@ export default function MobileMenu({ open, onClose }) {
               </button>
             </div>
 
-            {/* Centered nav list */}
+            {/* Nav list */}
             <nav className="flex-1 flex flex-col items-center justify-start pt-8 w-full px-10 gap-0">
-              {NAV_ITEMS.map(({ label, href }, i) => (
+              {NAV_ITEMS.map(({ labelKey, href }, i) => (
                 <motion.a
-                  key={label}
+                  key={labelKey}
                   href={href}
                   custom={i}
                   variants={itemVariants}
@@ -108,7 +100,7 @@ export default function MobileMenu({ open, onClose }) {
                   className="w-full text-center py-5 border-b border-border/60 text-[1.6rem] font-black tracking-widest uppercase text-accent hover:text-foreground hover:bg-foreground/5 transition-all duration-200"
                   style={{ textShadow: "0 0 24px rgba(200,16,46,0.25)" }}
                 >
-                  {label}
+                  {t(labelKey)}
                 </motion.a>
               ))}
 

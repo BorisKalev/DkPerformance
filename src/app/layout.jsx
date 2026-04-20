@@ -1,4 +1,5 @@
 import "./globals.css";
+import Providers from "@/components/Providers";
 
 // ── SEO Metadata ─────────────────────────────────────────────────────────────
 // Update SITE_URL when the real domain is confirmed
@@ -101,7 +102,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>{children}</body>
+      <body><Providers>{children}</Providers></body>
     </html>
   );
 }
