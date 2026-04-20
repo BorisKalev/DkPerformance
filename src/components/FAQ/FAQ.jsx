@@ -14,7 +14,7 @@ const FAQ_KEYS = [
   { q: "faq_q8", a: "faq_a8" },
 ];
 
-function FAQItem({ question, answer, isOpen, onToggle }) {
+function FAQItem({ questionKey, question, answer, isOpen, onToggle }) {
   return (
     <div className="border-b border-border last:border-0">
       <button
@@ -31,7 +31,6 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
           {question}
         </span>
 
-        {/* +/- icon */}
         <span
           className={`shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-200 ${
             isOpen
@@ -64,7 +63,7 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            key="answer"
+            key={questionKey}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -81,9 +80,12 @@ function FAQItem({ question, answer, isOpen, onToggle }) {
 
 export default function FAQ() {
   const { t } = useTranslation();
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openKey, setOpenKey] = useState(null);
 
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+  const toggle = (key) => setOpenKey(openKey === key ? null : key);
+
+  const half = Math.ceil(FAQ_KEYS.length / 2);
+  const columns = [FAQ_KEYS.slice(0, half), FAQ_KEYS.slice(half)];
 
   return (
     <section id="faq" className="py-20 px-6 bg-page border-t border-border">
@@ -94,21 +96,18 @@ export default function FAQ() {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-x-20">
-          {/* Split the 6 questions into two columns of 3 */}
-          {[FAQ_KEYS.slice(0, Math.ceil(FAQ_KEYS.length / 2)), FAQ_KEYS.slice(Math.ceil(FAQ_KEYS.length / 2))].map((col, colIdx) => (
+          {columns.map((col, colIdx) => (
             <div key={colIdx} className="border-t border-border">
-              {col.map(({ q, a }, rowIdx) => {
-                const globalIdx = colIdx * 3 + rowIdx;
-                return (
-                  <FAQItem
-                    key={q}
-                    question={t(q)}
-                    answer={t(a)}
-                    isOpen={openIndex === globalIdx}
-                    onToggle={() => toggle(globalIdx)}
-                  />
-                );
-              })}
+              {col.map(({ q, a }) => (
+                <FAQItem
+                  key={q}
+                  questionKey={q}
+                  question={t(q)}
+                  answer={t(a)}
+                  isOpen={openKey === q}
+                  onToggle={() => toggle(q)}
+                />
+              ))}
             </div>
           ))}
         </div>
