@@ -3,7 +3,18 @@
     "allow": [
       "Bash(npm create:*)",
       "Bash(npm install:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(mkdir -p \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\public\\\\videos\" \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\public\\\\logos\")",
+      "Bash(cp \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\src\\\\videos\\\\DkPerformanceAnimLogo.mp4\" \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\public\\\\videos/\")",
+      "Bash(cp \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\src\\\\videos\\\\Porsche360D.mp4\" \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\public\\\\videos/\")",
+      "Bash(cp c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\src\\\\assets\\\\logos\\\\*.png \"c:\\\\Users\\\\Krome\\\\React\\\\DkPerformance\\\\public\\\\logos/\")",
+      "Bash(mkdir -p \"/c/Users/Krome/React/DkPerformance/public/videos\" \"/c/Users/Krome/React/DkPerformance/public/logos\")",
+      "Bash(cp \"/c/Users/Krome/React/DkPerformance/src/videos/DkPerformanceAnimLogo.mp4\" \"/c/Users/Krome/React/DkPerformance/public/videos/\")",
+      "Bash(cp \"/c/Users/Krome/React/DkPerformance/src/videos/Porsche360D.mp4\" \"/c/Users/Krome/React/DkPerformance/public/videos/\")",
+      "Bash(cp /c/Users/Krome/React/DkPerformance/src/assets/logos/*.png \"/c/Users/Krome/React/DkPerformance/public/logos/\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
