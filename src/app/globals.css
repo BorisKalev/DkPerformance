@@ -35,6 +35,7 @@
 }
 
 @layer base {
+  ::selection { background-color: var(--color-accent); color: #ffffff; }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html   { scroll-behavior: smooth; @apply font-sans; }
   body   { background-color: var(--color-page); color: var(--color-primary); font-family: var(--font-body); line-height: 1.6;

@@ -108,6 +108,10 @@ export const translations = {
     faq_a5: "Yes, we stand behind all our work. If you experience any issue related to a service we performed, bring it back and we'll make it right.",
     faq_q6: "What payment methods do you accept?",
     faq_a6: "We accept cash, credit card, and debit. Payment is due upon completion of the service.",
+    faq_q7: "Is it safe to drive my car to you if something feels wrong?",
+    faq_a7: "If you notice unusual sounds, warning lights, or handling issues, call us first. In most cases, driving carefully at low speed is fine for short distances. However, if you hear grinding, smell burning, or the brake pedal feels soft, we strongly recommend having the car towed to avoid further damage or risk.",
+    faq_q8: "I don't know much about cars — will I understand what you tell me?",
+    faq_a8: "Absolutely. We explain everything in plain language, walk you through exactly what we found and why it needs attention, and always get your approval before starting any work. No jargon, no pressure — just honest, straightforward advice.",
 
     // ── Footer
     footer_tagline:   "Built different. Built right.",
@@ -229,6 +233,10 @@ export const translations = {
     faq_a5: "Oui, nous garantissons tout notre travail. Si vous constatez un problème lié à un service que nous avons effectué, ramenez votre véhicule et nous rectifierons la situation.",
     faq_q6: "Quels modes de paiement acceptez-vous ?",
     faq_a6: "Nous acceptons les paiements en espèces, par carte de crédit et par carte de débit. Le paiement est dû à la fin du service.",
+    faq_q7: "Est-ce risqué de conduire ma voiture jusqu'à vous si quelque chose semble anormal ?",
+    faq_a7: "Si vous remarquez des bruits inhabituels, des voyants allumés ou des problèmes de conduite, appelez-nous d'abord. Dans la plupart des cas, conduire prudemment sur une courte distance est sans danger. Cependant, si vous entendez un grincement, sentez une odeur de brûlé ou si la pédale de frein semble molle, nous recommandons fortement de faire remorquer votre véhicule.",
+    faq_q8: "Je ne m'y connais pas en voitures — vais-je comprendre ce que vous m'expliquerez ?",
+    faq_a8: "Absolument. Nous expliquons tout en termes simples, nous vous détaillons ce que nous avons trouvé et pourquoi une intervention est nécessaire, et nous obtenons toujours votre approbation avant de commencer. Pas de jargon, pas de pression — juste des conseils honnêtes et directs.",
 
     // ── Footer
     footer_tagline:   "Construit différemment. Construit correctement.",

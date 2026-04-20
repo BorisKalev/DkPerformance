@@ -10,6 +10,8 @@ const FAQ_KEYS = [
   { q: "faq_q4", a: "faq_a4" },
   { q: "faq_q5", a: "faq_a5" },
   { q: "faq_q6", a: "faq_a6" },
+  { q: "faq_q7", a: "faq_a7" },
+  { q: "faq_q8", a: "faq_a8" },
 ];
 
 function FAQItem({ question, answer, isOpen, onToggle }) {
@@ -93,7 +95,7 @@ export default function FAQ() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-x-20">
           {/* Split the 6 questions into two columns of 3 */}
-          {[FAQ_KEYS.slice(0, 3), FAQ_KEYS.slice(3)].map((col, colIdx) => (
+          {[FAQ_KEYS.slice(0, Math.ceil(FAQ_KEYS.length / 2)), FAQ_KEYS.slice(Math.ceil(FAQ_KEYS.length / 2))].map((col, colIdx) => (
             <div key={colIdx} className="border-t border-border">
               {col.map(({ q, a }, rowIdx) => {
                 const globalIdx = colIdx * 3 + rowIdx;
