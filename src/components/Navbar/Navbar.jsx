@@ -33,7 +33,7 @@ export default function Navbar() {
   const { lang, setLang, t } = useTranslation();
 
   const NAV_LINKS = [
-    { label: t("nav_about"),    href: "#about" },
+    { label: t("nav_appointment"), href: "#appointment" },
     { label: t("nav_services"), href: "#services" },
     { label: t("nav_location"), href: "#location" },
   ];

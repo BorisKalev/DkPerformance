@@ -9,11 +9,11 @@ const DIRECTIONS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=3954+Boulevard+Leman,+Laval,+Quebec+H7E+1A1,+Canada";
 
 const HOURS_DATA = [
-  { dayKey: "location_mon", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
-  { dayKey: "location_tue", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
-  { dayKey: "location_wed", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
-  { dayKey: "location_thu", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
-  { dayKey: "location_fri", hours: "09:00 a.m. – 05:00 p.m.", closed: false },
+  { dayKey: "location_mon", hours: "08:00 a.m. – 04:00 p.m.", closed: false },
+  { dayKey: "location_tue", hours: "08:00 a.m. – 04:00 p.m.", closed: false },
+  { dayKey: "location_wed", hours: "08:00 a.m. – 04:00 p.m.", closed: false },
+  { dayKey: "location_thu", hours: "08:00 a.m. – 04:00 p.m.", closed: false },
+  { dayKey: "location_fri", hours: "08:00 a.m. – 04:00 p.m.", closed: false },
   { dayKey: "location_sat", hours: null, closed: true },
   { dayKey: "location_sun", hours: null, closed: true },
 ];
@@ -82,7 +82,9 @@ export default function LocationSection() {
                   <span className="text-[0.8rem] font-semibold tracking-[0.06em] uppercase text-muted">
                     {t(dayKey)}
                   </span>
-                  <span className={`text-[0.8rem] font-medium ${closed ? "text-muted/40" : "text-foreground"}`}>
+                  <span
+                    className={`text-[0.8rem] font-medium ${closed ? "text-muted/40" : "text-foreground"}`}
+                  >
                     {closed ? t("location_closed") : hours}
                   </span>
                 </div>
@@ -100,10 +102,21 @@ export default function LocationSection() {
               className="bg-surface2 text-foreground border-border text-sm font-semibold tracking-[0.12em] uppercase hover:text-accent transition-colors duration-200"
             >
               <span className="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4 shrink-0" aria-hidden="true">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EA4335"/>
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 1.61.47 3.11 1.27 4.37L12 2z" fill="#C5221F"/>
-                  <circle cx="12" cy="9" r="2.5" fill="white"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 shrink-0"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                    fill="#EA4335"
+                  />
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 1.61.47 3.11 1.27 4.37L12 2z"
+                    fill="#C5221F"
+                  />
+                  <circle cx="12" cy="9" r="2.5" fill="white" />
                 </svg>
                 {t("location_directions")}
               </span>

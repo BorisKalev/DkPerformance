@@ -29,7 +29,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   const LINKS = [
-    { labelKey: "nav_about",    href: "#about" },
+    { labelKey: "nav_appointment", href: "#appointment" },
     { labelKey: "nav_services", href: "#services" },
     { labelKey: "nav_location", href: "#location" },
   ];
@@ -39,7 +39,10 @@ export default function Footer() {
       <div className="max-w-300 mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] gap-8 lg:gap-12 py-14">
         {/* Brand + social */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <a href="#hero" className="font-russo text-[1.5rem] tracking-[0.04em] text-foreground">
+          <a
+            href="#hero"
+            className="font-russo text-[1.5rem] tracking-[0.04em] text-foreground"
+          >
             DK Performance
           </a>
           <p className="mt-2 text-sm text-muted">{t("footer_tagline")}</p>
@@ -72,10 +75,16 @@ export default function Footer() {
 
         {/* Contact */}
         <div className="flex flex-col gap-2">
-          <a href="tel:+15149528503" className="text-sm text-muted hover:text-accent transition-colors duration-200">
+          <a
+            href="tel:+15149528503"
+            className="text-sm text-muted hover:text-accent transition-colors duration-200"
+          >
             514-952-8503
           </a>
-          <a href="mailto:info@dkperformance.ca" className="text-sm text-muted hover:text-accent transition-colors duration-200">
+          <a
+            href="mailto:info@dkperformance.ca"
+            className="text-sm text-muted hover:text-accent transition-colors duration-200"
+          >
             info@dkperformance.ca
           </a>
           <p className="mt-1 text-sm text-muted">
@@ -87,7 +96,8 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-300 mx-auto px-6 py-5">
           <p className="text-xs text-muted tracking-[0.03em]">
-            &copy; {new Date().getFullYear()} DK Performance. {t("footer_copyright")}
+            &copy; {new Date().getFullYear()} DK Performance.{" "}
+            {t("footer_copyright")}
           </p>
         </div>
       </div>

@@ -1,0 +1,78 @@
+# ── HTTPS enforcement ─────────────────────────────────────────────────────────
+RewriteEngine On
+
+# Redirect HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www → non-www (canonical domain)
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# ── Static export routing ──────────────────────────────────────────────────────
+# Next.js static export: serve index.html for clean paths
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.
+RewriteRule ^ /index.html [L]
+
+# ── GZIP / Deflate compression ─────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE image/svg+xml font/woff font/woff2
+</IfModule>
+
+# ── Browser caching ────────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Hashed static assets — cache 1 year
+  <FilesMatch "\.(js|css|woff|woff2|ttf|otf|eot)$">
+    ExpiresDefault "access plus 1 year"
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images — cache 1 month
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif|ico|svg)$">
+    ExpiresDefault "access plus 1 month"
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # HTML — always revalidate (single-page app)
+  <FilesMatch "\.(html)$">
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ── Security headers ───────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  # Prevent MIME sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Clickjacking protection
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # XSS protection (legacy browsers)
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Referrer policy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # HSTS — tell browsers to always use HTTPS (1 year)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Remove server signature
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ── Error pages ────────────────────────────────────────────────────────────────
+ErrorDocument 404 /index.html
+
+# ── Hide .htaccess itself ──────────────────────────────────────────────────────
+<Files ".htaccess">
+  Require all denied
+</Files>
